@@ -5,6 +5,6 @@ Charter: Carter
 BPM: 185
 ID: waitandbleed
 Video: https://youtu.be/1XbaWXjM7Gw
-Download: https://drive.google.com/drive/folders/17FhvBQrzM6wX-mO_xQiuzbgjx5-0X_m8
+Download: https://drive.google.com/file/d/1S3nOpTTIa9J4cF_OAimsav1QW6Tx4j0p/view
 ---
 I felt the air rise up in me
