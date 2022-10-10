@@ -1,0 +1,76 @@
+---
+permalink: /
+layout: compress
+---
+
+<html>
+  <head>
+    <title>Amplitude (2016) Custom Songs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" type="text/javascript"></script>
+    <style type="text/css">
+      body {
+        background-color: #eeeeee;
+        font-family:  sans-serif;
+        font-size: 14px;
+        padding: 1.5em;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .title {
+        font-weight: bold;
+      }
+
+      #wrapper {
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        padding: 10px;
+        max-width: 1024px;
+        margin: auto;
+        border: 1px solid #999;
+        box-shadow: 1px 1px 11px -1px rgba(0,0,0,0.5);
+        -webkit-box-shadow: 1px 1px 11px -1px rgba(0,0,0,0.5);
+        -moz-box-shadow: 1px 1px 11px -1px rgba(0,0,0,0.5);
+      }
+
+      hr {
+        border: 0;
+        background-color: #999;
+        height: 1px;
+      }
+
+      hr:last-child {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      {% for page in site.pages %}
+        {% if page.permalink != "/" %}
+        <div class="title">
+          <a href="{{ page.Download }}">{{ page.Artist }} - {{ page.Name}}</a>
+          {% if page.Video %}
+            - <a href="{{ page.Video }}">Demo Video</a>
+          {% endif %}
+        </div>
+        <div><strong>ID: </strong>{{ page.ID }}</div>
+        <div><strong>BPM: </strong>{{ page.BPM }}</div>
+        {% if page.Charter %}
+          <div><strong>Charter: </strong>{{ page.Charter }}</div>
+        {% endif %}
+        <div>{{ page.content }}</div>
+        <hr>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </body>
+</html>
