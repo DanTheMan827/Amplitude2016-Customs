@@ -17,6 +17,10 @@ layout: compress
         margin: 0;
       }
 
+      h3 {
+        margin-top: 0;
+      }
+
       a {
         text-decoration: none;
       }
@@ -40,7 +44,7 @@ layout: compress
         -webkit-box-shadow: 1px 1px 11px -1px rgba(0,0,0,0.5);
         -moz-box-shadow: 1px 1px 11px -1px rgba(0,0,0,0.5);
       }
-      
+
       #wrapper > div:last-of-type p {
         margin-bottom: 0;
       }
@@ -58,6 +62,9 @@ layout: compress
   </head>
   <body>
     <div id="wrapper">
+      <h3>Amplitude Custom Songs</h3>
+      <p>Below is a list of custom tracks for the 2016 release of Amplitude.  The easiest way to get them into the game is to use <a href="https://github.com/DanTheMan827/Modulation/releases/latest">Modulation</a>, a graphical frontend to <a href="https://github.com/adamclixby/modulate/">Modulate by Adam Clixby</a>.</p>
+      <hr>
       {% for page in site.pages %}
         {% if page.permalink != "/" and page.Download %}
         <div class="title">
