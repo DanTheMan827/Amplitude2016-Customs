@@ -75,9 +75,9 @@ layout: compress
         {% if page.permalink != "/" and page.Download %}
           <div class="song">
             <div class="title">
-              <a href="{{ page.Download }}">{{ page.Artist }} - {{ page.Name}}</a>
+              <a class="download" target="_blank" href="{{ page.Download }}">{{ page.Artist }} - {{ page.Name}}</a>
               {% if page.Video %}
-                - <a href="{{ page.Video }}">Demo Video</a>
+                - <a class="video" target="_blank" href="{{ page.Video }}">Demo Video</a>
               {% endif %}
             </div>
             <div class="id"><strong>ID: </strong>{{ page.ID }}</div>
@@ -90,5 +90,14 @@ layout: compress
         {% endif %}
       {% endfor %}
     </div>
+    <script type="text/javascript">
+      (function() {
+        var downloadLinks = document.getElementsByClassName("download");
+        for (var i = 0; i < downloadLinks.length; i++) {
+            downloadLinks[i].href = downloadLinks[i].href.replace(/^https?:\/\/drive\.google\.com\/file\/d\/([^/]+)\/view.*$/, "https://drive.google.com/u/0/uc?id=$1&export=download&confirm=t");
+            downloadLinks[i].href = downloadLinks[i].href.replace(/^(https?:\/\/www\.dropbox\.com\/[^?]+)$/, "$1?dl=1");
+        }
+      })();
+    </script>
   </body>
 </html>
