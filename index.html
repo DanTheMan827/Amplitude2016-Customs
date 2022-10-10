@@ -55,7 +55,7 @@ layout: compress
   <body>
     <div id="wrapper">
       {% for page in site.pages %}
-        {% if page.permalink != "/" %}
+        {% if page.permalink != "/" and page.Download %}
         <div class="title">
           <a href="{{ page.Download }}">{{ page.Artist }} - {{ page.Name}}</a>
           {% if page.Video %}
