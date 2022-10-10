@@ -7,7 +7,7 @@ layout: compress
   <head>
     <title>Amplitude (2016) Custom Songs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" type="text/javascript"></script>
+    <link type="application/json" href="songs.json" />
     <style type="text/css">
       body {
         background-color: #eeeeee;
@@ -69,6 +69,7 @@ layout: compress
       <div class="intro">
         <h3>Amplitude Custom Songs</h3>
         <p>Below is a list of custom tracks for the 2016 release of Amplitude.  The easiest way to get them into the game is to use <a href="https://github.com/DanTheMan827/Modulation/releases/latest">Modulation</a>, a graphical frontend to <a href="https://github.com/adamclixby/modulate/">Modulate by Adam Clixby</a>.</p>
+        <p>A json file of these songs can be found <a href="songs.json">here</a>.</p>
       </div>
       {% for page in site.pages %}
         {% if page.permalink != "/" and page.Download %}
