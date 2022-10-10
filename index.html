@@ -45,41 +45,47 @@ layout: compress
         -moz-box-shadow: 1px 1px 11px -1px rgba(0,0,0,0.5);
       }
 
-      #wrapper > div:last-of-type p {
+      .song, .intro {
+        margin: .5em 0;
+        border-bottom: 1px solid #999;
+      }
+
+      .intro {
+        margin-top: 0;
+      }
+
+      #wrapper > div:last-child {
+        border: 0;
         margin-bottom: 0;
       }
 
-      hr {
-        border: 0;
-        background-color: #999;
-        height: 1px;
-      }
-
-      hr:last-child {
-        display: none;
+      #wrapper > div:last-child p {
+        margin-bottom: 0;
       }
     </style>
   </head>
   <body>
     <div id="wrapper">
-      <h3>Amplitude Custom Songs</h3>
-      <p>Below is a list of custom tracks for the 2016 release of Amplitude.  The easiest way to get them into the game is to use <a href="https://github.com/DanTheMan827/Modulation/releases/latest">Modulation</a>, a graphical frontend to <a href="https://github.com/adamclixby/modulate/">Modulate by Adam Clixby</a>.</p>
-      <hr>
+      <div class="intro">
+        <h3>Amplitude Custom Songs</h3>
+        <p>Below is a list of custom tracks for the 2016 release of Amplitude.  The easiest way to get them into the game is to use <a href="https://github.com/DanTheMan827/Modulation/releases/latest">Modulation</a>, a graphical frontend to <a href="https://github.com/adamclixby/modulate/">Modulate by Adam Clixby</a>.</p>
+      </div>
       {% for page in site.pages %}
         {% if page.permalink != "/" and page.Download %}
-        <div class="title">
-          <a href="{{ page.Download }}">{{ page.Artist }} - {{ page.Name}}</a>
-          {% if page.Video %}
-            - <a href="{{ page.Video }}">Demo Video</a>
-          {% endif %}
-        </div>
-        <div><strong>ID: </strong>{{ page.ID }}</div>
-        <div><strong>BPM: </strong>{{ page.BPM }}</div>
-        {% if page.Charter %}
-          <div><strong>Charter: </strong>{{ page.Charter }}</div>
-        {% endif %}
-        <div>{{ page.content }}</div>
-        <hr>
+          <div class="song">
+            <div class="title">
+              <a href="{{ page.Download }}">{{ page.Artist }} - {{ page.Name}}</a>
+              {% if page.Video %}
+                - <a href="{{ page.Video }}">Demo Video</a>
+              {% endif %}
+            </div>
+            <div class="id"><strong>ID: </strong>{{ page.ID }}</div>
+            <div class="bpm"><strong>BPM: </strong>{{ page.BPM }}</div>
+            {% if page.Charter %}
+              <div class="charter"><strong>Charter: </strong>{{ page.Charter }}</div>
+            {% endif %}
+            <div class="content">{{ page.content }}</div>
+          </div>
         {% endif %}
       {% endfor %}
     </div>
