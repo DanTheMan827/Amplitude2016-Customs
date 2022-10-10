@@ -95,7 +95,7 @@ layout: compress
         var downloadLinks = document.getElementsByClassName("download");
         for (var i = 0; i < downloadLinks.length; i++) {
             downloadLinks[i].href = downloadLinks[i].href.replace(/^https?:\/\/drive\.google\.com\/file\/d\/([^/]+)\/view.*$/, "https://drive.google.com/u/0/uc?id=$1&export=download&confirm=t");
-            downloadLinks[i].href = downloadLinks[i].href.replace(/^(https?:\/\/www\.dropbox\.com\/[^?]+)$/, "$1?dl=1");
+            downloadLinks[i].href = downloadLinks[i].href.replace(/^(https?:\/\/www\.dropbox\.com\/[^?]+).*$/, "$1?dl=1");
         }
       })();
     </script>
