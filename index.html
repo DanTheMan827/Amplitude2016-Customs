@@ -105,10 +105,21 @@ layout: compress
           type: 'iframe',
           iframe: {
             patterns: {
-              dailymotion: {
+              youtube: {
                 index: 'youtu.be',
                 id: function(url) {        
                     var m = url.match(/^.+youtu\.be\/([^/]+)?/);
+                    if (m !== null) {
+                        return m[1];
+                    }
+                    return null;
+                },
+                src: 'https://www.youtube.com/embed/%id%?autoplay=1'
+              },
+              youtubecom: {
+                index: 'youtube.com',
+                id: function(url) {        
+                    var m = url.match(/^.+youtube\.com\/watch\?v=([^/&]+).*$/);
                     if (m !== null) {
                         return m[1];
                     }
