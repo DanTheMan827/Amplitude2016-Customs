@@ -1,5 +1,5 @@
 ---
-Artist: "We Are Magonia
+Artist: We Are Magonia
 Name: Synthwave Is Dead (Amp Remix)
 Charter: Mizzy
 BPM: 103
